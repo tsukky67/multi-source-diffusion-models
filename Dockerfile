@@ -18,11 +18,11 @@ COPY requirements.txt .
 
 RUN pip install --upgrade pip && \
     conda update -n base -c defaults conda && \
-    conda env create -n multi_source_diffusion -f env.yaml && \
+    conda env create -f env.yaml && \
     conda init && \
-    echo "conda activate multi_source_diffusion" >> ~/.bashrc
+    echo "conda activate msdm" >> ~/.bashrc
 
-ENV CONDA_DEFAULT_ENV multi_source_diffusion && \
-    PATH /opt/conda/envs/multi_source_diffusion/bin:$PATH
+ENV CONDA_DEFAULT_ENV msdm && \
+    PATH /opt/conda/envs/msdm/bin:$PATH
 
 WORKDIR /
